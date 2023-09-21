@@ -1,4 +1,7 @@
 # TODO: this is only tested ros:noetic image
+
+ARG DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update -qq \
  && apt-get install -q -y --no-install-recommends build-essential byobu neovim curl wget git sudo python3-catkin-tools python3-vcstool \
  && apt-get clean \
