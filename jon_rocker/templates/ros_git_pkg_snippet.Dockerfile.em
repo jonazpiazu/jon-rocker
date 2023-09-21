@@ -9,7 +9,7 @@ RUN apt-get update -qq \
 
 RUN mkdir -p ws/src \
  && cd ws/src \
- && git clone @git_url \
+ && git clone @git_url @(branch_name ? "-b " + branch_name) \
  && cd .. \
  && find . -maxdepth 2 -name '*.rosinstall' -exec sh -c "vcs import < {}" \; \
  && rosdep update  \
