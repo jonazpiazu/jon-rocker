@@ -11,7 +11,7 @@ RUN mkdir -p ws/src \
  && cd ws/src \
  && git clone @git_url @(branch_name ? "-b " + branch_name) \
  && cd .. \
- && find . -maxdepth 2 -name '*.rosinstall' -exec sh -c "vcs import < {}" \; \
+ && find . -maxdepth 2 \( -name '*.rosinstall' -o -name '*.repos' \) -exec sh -c "vcs import < {}" \; \
  && rosdep update  \
  && apt-get update -qq \
  && rosdep install --from-path src -iy \
