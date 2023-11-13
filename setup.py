@@ -21,6 +21,7 @@ setup(
     entry_points={
         'rocker.extensions': [
             'ros_git_pkg = jon_rocker.ros_git_pkg:RosGitPkg',
+            'opencl = jon_rocker.opencl:Opencl',
         ]
     }
 )
